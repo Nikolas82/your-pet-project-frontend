@@ -5,15 +5,9 @@ import { buttonStyles, hoverStylesB,  ripple } from '../Button/Button.styled';
 export const UserWrap = styled.div`
 
 &>.logout {
-   position: absolute;
-    bottom: 20px;
-    right: 50%;
+ 
 
-    @media screen and (min-width: 768px) {
-    position: relative;
-    justify-self: start;
 
-  }
 }
 
 `

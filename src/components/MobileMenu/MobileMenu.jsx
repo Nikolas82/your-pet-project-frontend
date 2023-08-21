@@ -15,14 +15,14 @@ export  const MobileMenu = ({ isOpen, onClose }) => {
 
   return (
     <MenuWrapp className= {isOpen ? ['menu', 'active'].join(' ') : 'menu'} >
-            <MenuHeader>
-                <StyledLogo to="/"  onClick={toggleMod}>{iconLogo}</StyledLogo>
+            {/* <MenuHeader className="mheader"> */}
+                <StyledLogo className='logo'  to="/"  onClick={toggleMod}>{iconLogo}</StyledLogo>
                <CloseButton onClick={onClose} ><RxCross2/></CloseButton>
-            </MenuHeader>
-        <MenuContent>
+            {/* </MenuHeader> */}
+        {/* <MenuContent className="mcontent"> */}
        {mod ? <AuthNav   onClose={onClose}/> :  <UserNav   onClose={onClose}/> }
             <Nav  onClose={onClose}/>
-        </MenuContent>
+        {/* </MenuContent> */}
     </MenuWrapp>
   );
 };

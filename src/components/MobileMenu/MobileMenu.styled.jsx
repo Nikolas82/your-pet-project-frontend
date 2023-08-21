@@ -2,8 +2,17 @@ import styled from 'styled-components';
 
 export const MenuWrapp = styled.div`
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns : 180px auto 180px 40px ;
+  grid-template-rows: 40px 100px 300px auto;
+  grid-row-gap: 18px;  
+  grid-column-gap: 8px;
+  grid-template-areas: 
+    'link top top cross'
+    'log log log log ' 
+    'nav nav nav nav '
+    'bot bot bot bot' ;
+
   position: fixed;
   top: 0;
   left: -100%;
@@ -24,38 +33,26 @@ export const MenuWrapp = styled.div`
     display: none;
   }
 
-`
-export const MenuHeader = styled.div`
-    position: relative;
-    width: 320px;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-self: center ;
-
-    @media screen and (min-width: 768px) {
-        width: 768px;
-    }
-
-`
-
-export const MenuContent = styled.div`
-    display: grid;
-    place-items: center;
-    grid-template-rows: 100px 200px ;
-    padding: 40px;
-    gap: 40px;
+  &>.AuthNav{
+    grid-area: log;
+}
+&>.NavWrap{
+    grid-area: nav;
+}
+  &>.logo{
+    grid-area: link;
+}
 
 
-
-    &>.AuthNav,
-    &>.UserNav{
+&>.AuthNav,
+&>.UserNav{
         display: flex;
+        /* display: flex;
         flex-direction: column;
         gap: 12px;
         justify-self: center;
         align-items: center;
-      
+       */
     }
 
     &>.NavWrap{
@@ -77,16 +74,31 @@ export const MenuContent = styled.div`
         }
     }
 
+
+`
+export const MenuHeader = styled.div`
+
+
+    @media screen and (min-width: 768px) {
+     
+    }
+
+`
+
+export const MenuContent = styled.div`
+
+
+
+
+
+
+
     @media screen and (min-width: 768px) {
         grid-template-rows: 300px 100px ;
 
     &>.AuthNav,
     &>.UserNav{
-        position: absolute;
-        top: 25px;
-        left: 48%;
-        display: flex;
-        flex-direction: row;
+  
     }
     
   } 
@@ -96,6 +108,7 @@ export const MenuContent = styled.div`
 `
 
 export const CloseButton = styled.button`
+ grid-area: cross;
   background-color: transparent;
   border: none;
   cursor: pointer;

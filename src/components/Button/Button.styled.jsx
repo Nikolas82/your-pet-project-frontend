@@ -372,6 +372,7 @@ fill: var(--white);
 `;
 
 export const StyledLogo = styled(NavLink)`
+grid-area: link;
 border: none;
 outline: none;
 background-color: transparent;

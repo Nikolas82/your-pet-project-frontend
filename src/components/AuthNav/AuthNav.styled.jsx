@@ -4,7 +4,8 @@ import { buttonStyles, hoverStylesY, ripple } from '../Button/Button.styled';
 
 export const AuthBtnWrap = styled.div`
     display: none;
-    
+   
+
     @media screen and (min-width: 768px) {
       display: flex;
       justify-self: flex-end;
