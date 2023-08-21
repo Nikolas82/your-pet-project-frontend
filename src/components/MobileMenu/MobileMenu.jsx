@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AuthNav } from '../AuthNav/AuthNav';
 import { Nav } from '../Nav/Nav';
-import { CloseButton, MenuContent, MenuHeader, MenuWrapp } from './MobileMenu.styled';
+import { CloseButton,  MenuHeader,  MenuWrapp } from './MobileMenu.styled';
 import { StyledLogo } from '../Button/Button.styled';
 import { iconLogo } from '../../images/icons';
 import { RxCross2 } from "react-icons/rx";
@@ -15,10 +15,10 @@ export  const MobileMenu = ({ isOpen, onClose }) => {
 
   return (
     <MenuWrapp className= {isOpen ? ['menu', 'active'].join(' ') : 'menu'} >
-            {/* <MenuHeader className="mheader"> */}
+            <MenuHeader className="mheader">
                 <StyledLogo className='logo'  to="/"  onClick={toggleMod}>{iconLogo}</StyledLogo>
                <CloseButton onClick={onClose} ><RxCross2/></CloseButton>
-            {/* </MenuHeader> */}
+            </MenuHeader>
         {/* <MenuContent className="mcontent"> */}
        {mod ? <AuthNav   onClose={onClose}/> :  <UserNav   onClose={onClose}/> }
             <Nav  onClose={onClose}/>

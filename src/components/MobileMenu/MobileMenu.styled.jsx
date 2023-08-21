@@ -3,15 +3,15 @@ import styled from 'styled-components';
 export const MenuWrapp = styled.div`
 
   display: grid;
-  grid-template-columns : 180px auto 180px 40px ;
+  /* grid-template-columns : 180px auto 180px 40px ; */
   grid-template-rows: 40px 100px 300px auto;
   grid-row-gap: 18px;  
   grid-column-gap: 8px;
   grid-template-areas: 
-    'link top top cross'
-    'log log log log ' 
-    'nav nav nav nav '
-    'bot bot bot bot' ;
+    'top top '
+    'log log ' 
+    'nav nav '
+    'bot bot ' ;
 
   position: fixed;
   top: 0;
@@ -33,11 +33,14 @@ export const MenuWrapp = styled.div`
     display: none;
   }
 
-  &>.AuthNav{
+&>.AuthNav{
     grid-area: log;
+
 }
 &>.NavWrap{
     grid-area: nav;
+    
+    
 }
   &>.logo{
     grid-area: link;
@@ -47,12 +50,10 @@ export const MenuWrapp = styled.div`
 &>.AuthNav,
 &>.UserNav{
         display: flex;
-        /* display: flex;
         flex-direction: column;
         gap: 12px;
-        justify-self: center;
+        
         align-items: center;
-       */
     }
 
     &>.NavWrap{
@@ -77,7 +78,13 @@ export const MenuWrapp = styled.div`
 
 `
 export const MenuHeader = styled.div`
+    grid-area: top;
+    width: 320px;
+    justify-self: center;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     @media screen and (min-width: 768px) {
      
@@ -86,12 +93,6 @@ export const MenuHeader = styled.div`
 `
 
 export const MenuContent = styled.div`
-
-
-
-
-
-
 
     @media screen and (min-width: 768px) {
         grid-template-rows: 300px 100px ;
